@@ -1,11 +1,13 @@
 package sol;
 
-import src.City;
-import src.ITravelController;
-import src.Transport;
+import com.sun.source.tree.ReturnTree;
+import src.*;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.function.Function;
 
 public class TravelController implements ITravelController<City, Transport> {
 
@@ -20,29 +22,34 @@ public class TravelController implements ITravelController<City, Transport> {
 
     @Override
     public String load(String citiesFile, String transportFile) {
-        // TODO: instantiate a new Graph object in the graph field
+        this.graph = new TravelGraph();
+        TravelCSVParser parser = new TravelCSVParser();
 
-        // TODO: create an instance of the TravelCSVParser
+        Function<Map<String, String>, Void> addVertex = map -> {
+            this.graph.addVertex(new City(map.get("name")));
+            return null; // need explicit return null to account for Void type
+        };
 
-        // TODO: create a variable of type Function<Map<String, String>, Void>
-        //       that will build the nodes in a graph. Keep in mind
-        //       that the input to this function is a hashmap that relates the
-        //       COLUMN NAMES of the csv to the VALUE IN THE COLUMN of the csv.
-        //       It might be helpful to write a method in this class that takes the
-        //       information from the csv needed to create an edge and uses that to
-        //       build the edge on the graph.
+        try {
+            // pass in string for CSV and function to create City (vertex) using city name
+            parser.parseLocations(citiesFile, addVertex);
+        } catch (IOException e) {
+            return "Error parsing file: " + citiesFile;
+        }
 
-        // TODO: create another variable of type Function<Map<String, String>, Void> which will
-        //  build connections between nodes in a graph.
+        Function<Map<String, String>, Void> addEdge = map -> {
+            this.graph.addEdge(this.graph.getCityName(map.get("origin")), new Transport(this.graph.getCityName(map.get("origin")),
+                    this.graph.getCityName(map.get("destination")),
+                     TransportType.fromString(map.get("type")), Double.parseDouble(map.get("price")), Double.parseDouble(map.get("duration"))));
+            return null;
+        };
 
-        // TODO: call parseLocations with the first Function variable as an argument and the right
-        //  file
-
-        // TODO: call parseTransportation with the second Function variable as an argument and
-        //  the right file
-
-        // hint: note that parseLocations and parseTransportation can
-        //       throw IOExceptions. How can you handle these calls cleanly?
+        try{
+            parser.parseTransportation(transportFile, addEdge);
+        }
+        catch (IOException e){
+            return "Error parsing file: " + transportFile;
+        }
 
         return "Successfully loaded cities and transportation files.";
     }

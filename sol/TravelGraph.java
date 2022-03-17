@@ -4,44 +4,49 @@ import src.City;
 import src.IGraph;
 import src.Transport;
 
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Set;
 
 public class TravelGraph implements IGraph<City, Transport> {
+    private HashMap<String, City> vertices;
+
+    public TravelGraph(){
+        this.vertices = new HashMap<>();
+    }
 
     @Override
     public void addVertex(City vertex) {
-        // TODO: implement this method!
+        this.vertices.put(vertex.toString(), vertex);
     }
 
     @Override
     public void addEdge(City origin, Transport edge) {
-        // TODO: implement this method!
+        origin.addOut(edge);
     }
 
     @Override
-    public Set<City> getVertices() {
-        // TODO: implement this method!
-        return null;
+    public Set<City> getVertices() { //ask about casting the collection to a set
+        return new HashSet<>(this.vertices.values());
     }
 
     @Override
     public City getEdgeSource(Transport edge) {
-        // TODO: implement this method!
-        return null;
+        return edge.getSource();
     }
 
     @Override
     public City getEdgeTarget(Transport edge) {
-        // TODO: implement this method!
-        return null;
+        return edge.getTarget();
     }
 
     @Override
     public Set<Transport> getOutgoingEdges(City fromVertex) {
-        // TODO: implement this method!
-        return null;
+        return fromVertex.getOutgoing();
     }
 
-    // TODO: feel free to add your own methods here!
-    // hint: maybe you need to get a City by its name
+    public City getCityName(String cityName){
+      return this.vertices.get(cityName);
+    }
+
 }

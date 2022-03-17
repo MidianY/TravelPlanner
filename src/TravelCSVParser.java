@@ -27,11 +27,11 @@ public class TravelCSVParser {
      * creates vertices for each row in a cities CSV file
      *
      * @param locationFile path to csv file containing location (ex: data/cities1.csv)
-     * @param handleLoc    function that takes a Map (with key "name"and a location as the value) and creates a 
-     * vertex representing that location in your graph class(es).
+     * @param handleLoc    function that takes a Map (with key "name"and a location as the value) and creates a
+     *                     vertex representing that location in your graph class(es).
      */
     public void parseLocations(String locationFile, Function<Map<String, String>, Void> handleLoc)
-        throws IOException {
+            throws IOException {
         CSVParser parser = new CSVParser(new FileReader(locationFile), FORMAT);
 
         // Applies the handleLoc function to each Map (represents one row) created by the parser
@@ -39,6 +39,8 @@ public class TravelCSVParser {
             handleLoc.apply(record.toMap());
         }
     }
+
+
 
     /**
      * parses a transportation file using the function you will pass in as an argument
