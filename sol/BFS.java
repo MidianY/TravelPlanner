@@ -14,7 +14,7 @@ public class BFS<V, E> implements IBFS<V, E> {
     @Override
     public List<E> getPath(IGraph<V, E> graph, V start, V end) {
         List<E> path = new ArrayList<>();
-        if(checkExist(graph, start, end)){
+        if(checkPath(graph, start, end)){
             V current = graph.getEdgeSource(this.cityTransport.get(end));
             while(!current.equals(start)){
                 path.add(this.cityTransport.get(current));
@@ -24,7 +24,7 @@ public class BFS<V, E> implements IBFS<V, E> {
     }
 
     //call this helper in getPath and tells you whether a path exists, if true it exists if false throw error
-    private boolean checkExist(IGraph<V, E> graph, V start, V end){
+    private boolean checkPath(IGraph<V, E> graph, V start, V end){
         Queue<E> toCheck = new LinkedList<>(graph.getOutgoingEdges(start)); //contains outgoing edges from the start
         HashSet<E> visited = new HashSet<>(graph.getOutgoingEdges(start)); //not sure
 

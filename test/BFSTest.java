@@ -8,7 +8,7 @@ import test.simple.SimpleVertex;
 
 import java.util.List;
 
-import static org.junit.Assert.assertEquals;
+import static org.ju6nit.Assert.assertEquals;
 
 /**
  * Your BFS tests should all go in this class!
