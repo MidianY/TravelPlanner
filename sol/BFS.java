@@ -3,23 +3,31 @@ package sol;
 import src.IBFS;
 import src.IGraph;
 
-import javax.swing.*;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
 
 public class BFS<V, E> implements IBFS<V, E> {
-    private HashMap<V, E> visited;
+    private HashMap<V, E> cityTransport;
 
     public BFS(){
-        this.visited = new HashMap<>();
+        this.cityTransport = new HashMap<>();
     }
 
 
     // TODO: implement the getPath method!
     @Override
     public List<E> getPath(IGraph<V, E> graph, V start, V end) {
+        if(checkExist(graph, start, end)){
+            V current = graph.getEdgeSource(this.cityTransport.get(end));
+            while(!current.equals(start)){
+                this.cityTransport.get(current);
+            }
+
+        }
+
+        //if the city is equal to the start
         //while loop
         //look for end node in the hashmap
         //get previous node from that edge
@@ -39,8 +47,8 @@ public class BFS<V, E> implements IBFS<V, E> {
             if(visited.contains(start)){
                 continue;
             }
-            if(!this.visited.containsKey(targetVertex)){
-                this.visited.put(targetVertex, checkingVertex);
+            if(!this.cityTransport.containsKey(targetVertex)){
+                this.cityTransport.put(targetVertex, checkingVertex);
             }
             if(end.equals(targetVertex)){
                 return true;
