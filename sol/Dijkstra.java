@@ -36,8 +36,6 @@ public class Dijkstra<V, E> implements IDijkstra<V, E> {
 
 
 
-
-
     public void checkPath(IGraph<V, E> graph, V source,
                              Function<E, Double> edgeWeight) {
         Comparator<V> weights = (weight1, weight2) -> {
