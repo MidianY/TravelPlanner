@@ -15,9 +15,11 @@ public class BFS<V, E> implements IBFS<V, E> {
     public List<E> getPath(IGraph<V, E> graph, V start, V end) {
         List<E> path = new ArrayList<>();
         if(checkPath(graph, start, end)){
+            path.add(this.cityTransport.get(end));
             V current = graph.getEdgeSource(this.cityTransport.get(end));
             while(!current.equals(start)){
                 path.add(this.cityTransport.get(current));
+                current = graph.getEdgeSource(this.cityTransport.get(current));
             }
         }
         return path;
@@ -26,30 +28,25 @@ public class BFS<V, E> implements IBFS<V, E> {
     //call this helper in getPath and tells you whether a path exists, if true it exists if false throw error
     private boolean checkPath(IGraph<V, E> graph, V start, V end){
         Queue<E> toCheck = new LinkedList<>(graph.getOutgoingEdges(start)); //contains outgoing edges from the start
-        HashSet<E> visited = new HashSet<>(graph.getOutgoingEdges(start)); //not sure
+        HashSet<V> visited = new HashSet<>();
 
         while (!toCheck.isEmpty()) {
-            E checkingEdge = toCheck.poll(); //prev
-            V targetVertex = graph.getEdgeTarget(checkingEdge); //next
-
-            if (visited.contains(start)) {
+            E checkingEdge = toCheck.poll();
+            V targetVertex = graph.getEdgeTarget(checkingEdge);
+            if (visited.contains(targetVertex)) {
                 continue;
             }
-            for (E edges : graph.getOutgoingEdges(targetVertex)) {
-                if (!this.cityTransport.containsKey(targetVertex)) {
-                    this.cityTransport.put(targetVertex, edges);
-                }
-                if (end.equals(targetVertex)) {
-                    return true;
-                } else {
-                    toCheck.addAll(graph.getOutgoingEdges(targetVertex));
-                }
+            visited.add(targetVertex);
+            this.cityTransport.put(targetVertex, checkingEdge);
+            if (end.equals(targetVertex)) {
+                return true;
+            }
+            else{
+                toCheck.addAll(graph.getOutgoingEdges(targetVertex));
             }
         }
         return false;
     }
 
 
-    // TODO: feel free to add your own methods here!
-    // hint: maybe you need to get a City by its name
 }

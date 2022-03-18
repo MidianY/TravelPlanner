@@ -24,10 +24,11 @@ public class Dijkstra<V, E> implements IDijkstra<V, E> {
 
         List<E> shortestPath = new ArrayList<>();
 
-        //checking if path exists
+        shortestPath.add(this.path.get(destination));
         V current = graph.getEdgeSource(this.path.get(destination));
         while(!current.equals(source)){
             shortestPath.add(this.path.get(current));
+            current = graph.getEdgeSource(this.path.get(current));
         }
         return shortestPath;
     }
