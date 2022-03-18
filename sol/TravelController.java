@@ -9,7 +9,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.function.Function;
 
-public class TravelController implements ITravelController<City, Transport> {
+public class
+TravelController implements ITravelController<City, Transport> {
 
     // Why is this field of type TravelGraph and not IGraph?
     // Are there any advantages to declaring a field as a specific type rather than the interface?
