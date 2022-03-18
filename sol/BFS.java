@@ -15,7 +15,7 @@ public class BFS<V, E> implements IBFS<V, E> {
     public List<E> getPath(IGraph<V, E> graph, V start, V end) {
         List<E> path = new ArrayList<>();
         if(checkPath(graph, start, end)){
-            path.add(this.cityTransport.get(end));
+                path.add(this.cityTransport.get(end));
             V current = graph.getEdgeSource(this.cityTransport.get(end));
             while(!current.equals(start)){
                 path.add(this.cityTransport.get(current));

@@ -36,6 +36,10 @@ public class Dijkstra<V, E> implements IDijkstra<V, E> {
 
 
 
+<<<<<<< HEAD
+
+=======
+>>>>>>> 04e7512bd986d4b5b18fe6163c2b2ff251549aa4
     public void checkPath(IGraph<V, E> graph, V source,
                              Function<E, Double> edgeWeight) {
 
