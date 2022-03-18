@@ -22,9 +22,10 @@ public class Dijkstra<V, E> implements IDijkstra<V, E> {
 
         this.checkPath(graph, source, edgeWeight); //should only be called if shortest path is called?
 
+        System.out.println(this.path.get(destination));
         List<E> shortestPath = new ArrayList<>();
-
         shortestPath.add(this.path.get(destination));
+
         V current = graph.getEdgeSource(this.path.get(destination));
         while(!current.equals(source)){
             shortestPath.add(this.path.get(current));
@@ -35,28 +36,32 @@ public class Dijkstra<V, E> implements IDijkstra<V, E> {
 
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 04e7512bd986d4b5b18fe6163c2b2ff251549aa4
     public void checkPath(IGraph<V, E> graph, V source,
                              Function<E, Double> edgeWeight) {
+
         Comparator<V> weights = (weight1, weight2) -> {
             return Double.compare(this.costs.get(weight1), this.costs.get(weight2));
         };
 
         PriorityQueue<V> toCheckQueue = new PriorityQueue<>(weights);
         for (V vertex : graph.getVertices()) {
-            this.costs.put(source, (double)0);
             this.costs.put(vertex, Double.POSITIVE_INFINITY);
+        }
+        this.costs.put(source, (double) 0);
 
-            while (!toCheckQueue.isEmpty()) {
-                V targetVertex = toCheckQueue.poll();
-                for (E edge : graph.getOutgoingEdges(targetVertex)) {
-                    if (this.costs.get(targetVertex) + edgeWeight.apply(edge) < this.costs.get(edge)){
+        toCheckQueue.addAll(graph.getVertices());
+        while (!toCheckQueue.isEmpty()) {
+            V currentVertex = toCheckQueue.poll();
+            for (E edge : graph.getOutgoingEdges(currentVertex)) {
+                V neighborVertex = graph.getEdgeTarget(edge);
 
-                        double neighbor = this.costs.get(edge);
-                        neighbor = this.costs.get(targetVertex) + edgeWeight.apply(edge);
-                        this.path.put(targetVertex, edge);
-                        toCheckQueue.remove(edge);
-                    }
+                if (this.costs.get(currentVertex) + edgeWeight.apply(edge) < this.costs.get(neighborVertex)){
+                    this.costs.put(neighborVertex, this.costs.get(currentVertex) + edgeWeight.apply(edge));
+                    this.path.put(neighborVertex, edge);
                 }
             }
         }
