@@ -2,6 +2,7 @@ package sol;
 
 import com.sun.source.tree.ReturnTree;
 import src.*;
+import test.simple.SimpleEdge;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -11,6 +12,8 @@ import java.util.function.Function;
 
 public class
 TravelController implements ITravelController<City, Transport> {
+    private Dijkstra dijkstra;
+    private BFS bfs;
 
     // Why is this field of type TravelGraph and not IGraph?
     // Are there any advantages to declaring a field as a specific type rather than the interface?
@@ -19,6 +22,8 @@ TravelController implements ITravelController<City, Transport> {
     private TravelGraph graph;
 
     public TravelController() {
+        this.dijkstra = new Dijkstra();
+        this.bfs = new BFS();
     }
 
     @Override
@@ -57,19 +62,22 @@ TravelController implements ITravelController<City, Transport> {
 
     @Override
     public List<Transport> fastestRoute(String source, String destination) {
-        // TODO: implement this method!
-        return new ArrayList<>();
+        Function<Transport, Double> priceCalculation = e -> e.getMinutes();
+        return this.dijkstra.getShortestPath(this.graph,this.graph.getCityName(source),
+                this.graph.getCityName(destination), priceCalculation);
     }
 
     @Override
     public List<Transport> cheapestRoute(String source, String destination) {
-        // TODO: implement this method!
-        return new ArrayList<>();
+        Function<Transport, Double> priceCalculation = e -> e.getPrice();
+
+        return   this.dijkstra.getShortestPath(this.graph,this.graph.getCityName(source),
+                this.graph.getCityName(destination), priceCalculation);
     }
 
     @Override
     public List<Transport> mostDirectRoute(String source, String destination) {
-        // TODO: implement this method!
-        return new ArrayList<>();
+
+        return this.bfs.getPath(this.graph, this.graph.getCityName(source), this.graph.getCityName(destination));
     }
 }

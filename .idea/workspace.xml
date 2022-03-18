@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1fe7cc4a-eb8d-4716-b8ca-bdbdd2a4b485" name="Changes" comment="" />
+    <list default="true" id="1fe7cc4a-eb8d-4716-b8ca-bdbdd2a4b485" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sol/TravelController.java" beforeDir="false" afterPath="$PROJECT_DIR$/sol/TravelController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/DijkstraTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/DijkstraTest.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -24,7 +28,7 @@
     <property name="project.structure.proportion" value="0.11764705" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
-  <component name="RunManager" selected="JUnit.BFSTest">
+  <component name="RunManager" selected="JUnit.DijkstraTest">
     <configuration name="BFSTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="travel-planner-MidianY-lyndaumuhoza" />
       <extension name="coverage">
@@ -89,8 +93,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.BFSTest" />
         <item itemvalue="JUnit.DijkstraTest" />
+        <item itemvalue="JUnit.BFSTest" />
         <item itemvalue="JUnit.DijkstraTest.testSimple" />
         <item itemvalue="JUnit.BFSTest.testBasicBFS" />
       </list>
@@ -116,16 +120,5 @@
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="oldMeFiltersMigrated" value="true" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/sol/Dijkstra.java</url>
-          <line>46</line>
-          <option name="timeStamp" value="13" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

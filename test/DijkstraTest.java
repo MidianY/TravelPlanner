@@ -85,4 +85,9 @@ public class DijkstraTest {
     }
 
     // TODO: write more tests + make sure you test all the cases in your testing plan!
+
+    @Test
+    public void test(){
+
+    }
 }
