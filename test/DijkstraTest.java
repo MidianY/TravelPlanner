@@ -66,6 +66,7 @@ public class DijkstraTest {
         this.graph.addEdge(this.d, new SimpleEdge(5, this.e, this.d));
     }
 
+
     @Test
     public void testSimple() {
         this.createSimpleGraph();

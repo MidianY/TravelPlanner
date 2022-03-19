@@ -22,6 +22,7 @@ public class BFS<V, E> implements IBFS<V, E> {
                 current = graph.getEdgeSource(this.cityTransport.get(current));
             }
         }
+        System.out.println(path);
         return path;
     }
 

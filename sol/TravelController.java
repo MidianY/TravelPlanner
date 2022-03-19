@@ -24,6 +24,7 @@ TravelController implements ITravelController<City, Transport> {
     public TravelController() {
         this.dijkstra = new Dijkstra();
         this.bfs = new BFS();
+        this.graph = new TravelGraph();
     }
 
     @Override
