@@ -20,17 +20,16 @@ public class Dijkstra<V, E> implements IDijkstra<V, E> {
     public List<E> getShortestPath(IGraph<V, E> graph, V source, V destination,
                                    Function<E, Double> edgeWeight) {
 
-        this.checkPath(graph, source, edgeWeight); //should only be called if shortest path is called?
-
-        System.out.println(this.path.get(destination));
+        this.checkPath(graph, source, edgeWeight);
         List<E> shortestPath = new ArrayList<>();
-        shortestPath.add(this.path.get(destination));
-
-        V current = graph.getEdgeSource(this.path.get(destination));
-        while(!current.equals(source)){
-            shortestPath.add(this.path.get(current));
+        V current = destination;
+        E currentEdge = this.path.get(current);
+        while(currentEdge != null){
+            shortestPath.add(0, this.path.get(current));
             current = graph.getEdgeSource(this.path.get(current));
+            currentEdge = this.path.get(current);
         }
+
         return shortestPath;
     }
 
@@ -45,6 +44,7 @@ public class Dijkstra<V, E> implements IDijkstra<V, E> {
         PriorityQueue<V> toCheckQueue = new PriorityQueue<>(weights);
         for (V vertex : graph.getVertices()) {
             this.costs.put(vertex, Double.POSITIVE_INFINITY);
+            this.path.put(vertex, null);
         }
         this.costs.put(source, (double) 0);
 
@@ -57,6 +57,8 @@ public class Dijkstra<V, E> implements IDijkstra<V, E> {
                 if (this.costs.get(currentVertex) + edgeWeight.apply(edge) < this.costs.get(neighborVertex)){
                     this.costs.put(neighborVertex, this.costs.get(currentVertex) + edgeWeight.apply(edge));
                     this.path.put(neighborVertex, edge);
+                    toCheckQueue.remove(neighborVertex);
+                    toCheckQueue.add(neighborVertex);
                 }
             }
         }

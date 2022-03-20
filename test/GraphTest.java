@@ -72,5 +72,16 @@ public class GraphTest {
         assertTrue(this.graph.getVertices().contains(this.c));
     }
 
+    @Test
+    public void testGetEdgeSource() {
+        this.createSimpleGraph();
+        assertEquals(this.graph.getEdgeSource(this.edgeAB), this.a);
+    }
+
+    @Test
+    public void testGetEdgeTarget(){
+
+    }
+
     // TODO: write more tests + make sure you test all the cases in your testing plan!
 }

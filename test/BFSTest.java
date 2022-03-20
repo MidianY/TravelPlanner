@@ -66,6 +66,7 @@ public class BFSTest {
 
         this.bfs = new BFS();
         this.travelController = new TravelController();
+        this.travelController.load("data/cities1.csv", "data/transport1.csv");
     }
 
     public void makeSimpleGraph() {
@@ -142,16 +143,17 @@ public class BFSTest {
         BFS<SimpleVertex, SimpleEdge> bfs = new BFS<>();
         List<SimpleEdge> path = bfs.getPath(this.graph, this.a, this.a);
         List<SimpleEdge> sampleList = new ArrayList();
-        sampleList.add(new SimpleEdge(2, this.a, this.a));
+        //sampleList.add(new SimpleEdge(2, this.a, this.a));
         assertEquals(path,sampleList);
     }
 
     @Test
     public void testBFSMostDirectRoute(){
         this.simpleGraph1();
-        this.travelController.mostDirectRoute(this.a.toString(), this.d.toString());
-        assertEquals(2, this.travelController.mostDirectRoute(this.a.toString(), this.d.toString()).size());
+        //this.travelController.mostDirectRoute(this.a.toString(), this.d.toString());
+        assertEquals(1, this.travelController.mostDirectRoute("Boston", "Providence").size());
     }
+
 
 
     // TODO: write more tests + make sure you test all the cases in your testing plan!

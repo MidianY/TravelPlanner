@@ -15,14 +15,14 @@ public class BFS<V, E> implements IBFS<V, E> {
     public List<E> getPath(IGraph<V, E> graph, V start, V end) {
         List<E> path = new ArrayList<>();
         if(checkPath(graph, start, end)){
-                path.add(this.cityTransport.get(end));
+                path.add(0, this.cityTransport.get(end));
             V current = graph.getEdgeSource(this.cityTransport.get(end));
             while(!current.equals(start)){
-                path.add(this.cityTransport.get(current));
+                path.add(0, this.cityTransport.get(current));
                 current = graph.getEdgeSource(this.cityTransport.get(current));
             }
         }
-        System.out.println(path);
+        //System.out.println(path);
         return path;
     }
 
@@ -38,7 +38,9 @@ public class BFS<V, E> implements IBFS<V, E> {
                 continue;
             }
             visited.add(targetVertex);
-            this.cityTransport.put(targetVertex, checkingEdge);
+            if(!this.cityTransport.containsKey(targetVertex)) {
+                this.cityTransport.put(targetVertex, checkingEdge);
+            }
             if (end.equals(targetVertex)) {
                 return true;
             }
