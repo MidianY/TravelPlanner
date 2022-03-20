@@ -15,7 +15,6 @@ public class Dijkstra<V, E> implements IDijkstra<V, E> {
         this.costs = new HashMap<>();
     }
 
-    // TODO: implement the getShortestPath method!
     @Override
     public List<E> getShortestPath(IGraph<V, E> graph, V source, V destination,
                                    Function<E, Double> edgeWeight) {
