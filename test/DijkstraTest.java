@@ -2,7 +2,9 @@ package test;
 
 import org.junit.Test;
 import sol.Dijkstra;
+import sol.TravelController;
 import src.IDijkstra;
+import src.Transport;
 import test.simple.SimpleEdge;
 import test.simple.SimpleGraph;
 import test.simple.SimpleVertex;
@@ -26,13 +28,13 @@ import static org.junit.Assert.assertTrue;
 public class DijkstraTest {
 
     private static final double DELTA = 0.001;
-
     private SimpleGraph graph;
     private SimpleVertex a;
     private SimpleVertex b;
     private SimpleVertex c;
     private SimpleVertex d;
     private SimpleVertex e;
+    private TravelController travelController;
 
     /**
      * Creates a simple graph.
@@ -42,6 +44,12 @@ public class DijkstraTest {
      *
      * TODO: create more setup methods!
      */
+
+    private void setup(){
+        this.travelController = new TravelController();
+        this.travelController.load("data/cities3.csv", "data/transport4.csv");
+    }
+
     private void createSimpleGraph() {
         this.graph = new SimpleGraph();
 
@@ -85,10 +93,19 @@ public class DijkstraTest {
         assertEquals(2, path.size());
     }
 
-    // TODO: write more tests + make sure you test all the cases in your testing plan!
+    /**
+     * Method tests to ensure Dijkstra's Algorithm is giving two different routes to the same destination when
+     * it is testing for fastest and cheapest route
+     */
+
 
     @Test
-    public void test(){
+    public void testDijkstra(){
+        this.setup();
+        //Providence -> Chicago -> Boston
+        assertEquals(2, this.travelController.fastestRoute("Providence", "Boston").size());
 
+        //Providence -> Washington -> Florida -> Boston
+        assertEquals(3, this.travelController.cheapestRoute("Providence", "Boston").size());
     }
 }
