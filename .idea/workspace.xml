@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1fe7cc4a-eb8d-4716-b8ca-bdbdd2a4b485" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sol/Dijkstra.java" beforeDir="false" afterPath="$PROJECT_DIR$/sol/Dijkstra.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/BFSTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/BFSTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/transport3.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/transport3.csv" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -143,10 +141,10 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/BFS_java$GraphTest.ic" NAME="GraphTest Coverage Results" MODIFIED="1647568684415" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/BFS_java$DijkstraTest.ic" NAME="DijkstraTest Coverage Results" MODIFIED="1647568605043" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>test.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/BFS_java$DijkstraTest.ic" NAME="DijkstraTest Coverage Results" MODIFIED="1647568605043" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/BFS_java$GraphTest.ic" NAME="GraphTest Coverage Results" MODIFIED="1647568684415" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>test.*</FILTER>
     </SUITE>
   </component>
