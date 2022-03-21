@@ -1,0 +1,7 @@
+origin,destination,type,price,duration
+Washington,NewYork,bus,2,2
+Washington,Boston,train,3,1
+NewYork,Boston,bus,1,2
+Boston,Providence,train,6,1
+Providence,NewYork,bus,2,1
+NewYork,Chicago,train,5,3
