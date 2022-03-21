@@ -97,8 +97,6 @@ public class DijkstraTest {
      * Method tests to ensure Dijkstra's Algorithm is giving two different routes to the same destination when
      * it is testing for fastest and cheapest route
      */
-
-
     @Test
     public void testDijkstra(){
         this.setup();
