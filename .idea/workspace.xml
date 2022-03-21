@@ -2,14 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1fe7cc4a-eb8d-4716-b8ca-bdbdd2a4b485" name="Changes" comment="">
-<<<<<<< HEAD
       <change afterPath="$PROJECT_DIR$/data/cities3.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/cities4.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/transport4.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/transport4.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/DijkstraTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/DijkstraTest.java" afterDir="false" />
-=======
-      <change beforePath="$PROJECT_DIR$/data/transport3.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/transport3.csv" afterDir="false" />
->>>>>>> 8740b346c4f7f6ff89c22c053568eb1f9168d83f
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

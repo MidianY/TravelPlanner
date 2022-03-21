@@ -41,13 +41,13 @@ public class DijkstraTest {
      * You'll find a similar method in each of the Test files.
      * Normally, we'd like to use @Before, but because each test may require a different setup,
      * we manually call the setup method at the top of the test.
-     *
+     * <p>
      * TODO: create more setup methods!
      */
 
     private void setup(){
         this.travelController = new TravelController();
-        this.travelController.load("data/cities3.csv", "data/transport4.csv");
+        this.travelController.load("data/cities4.csv", "data/transport4.csv");
     }
 
     private void createSimpleGraph() {
@@ -83,7 +83,7 @@ public class DijkstraTest {
         Function<SimpleEdge, Double> edgeWeightCalculation = e -> e.weight;
         // a -> c -> d -> b
         List<SimpleEdge> path =
-            dijkstra.getShortestPath(this.graph, this.a, this.b, edgeWeightCalculation);
+                dijkstra.getShortestPath(this.graph, this.a, this.b, edgeWeightCalculation);
         assertEquals(6, SimpleGraph.getTotalEdgeWeight(path), DELTA);
         assertEquals(3, path.size());
 
@@ -98,7 +98,7 @@ public class DijkstraTest {
      * it is testing for fastest and cheapest route
      */
     @Test
-    public void testDijkstra(){
+    public void testDijkstra() {
         this.setup();
         //Providence -> Chicago -> Boston
         assertEquals(2, this.travelController.fastestRoute("Providence", "Boston").size());
