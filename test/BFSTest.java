@@ -132,16 +132,6 @@ public class BFSTest {
     }
 
     /**
-     * Checks whether the bfs algorithm executes as expected for complex graphs(using Transport and City classes).
-     */
-    @Test
-    public void testGraph(){
-        this.makeComplexGraph();
-        List<Transport> path = this.bfs2.getPath(this.travelGraph, this.washington, this.boston);
-        assertEquals(path.size(), 2);
-    }
-
-    /**
      * Creates a basic simple graph
      */
     public void makeSimpleGraph2(){
@@ -164,6 +154,16 @@ public class BFSTest {
         this.graph.addEdge(this.b, new SimpleEdge(1, this.b, this.c));
         this.graph.addEdge(this.a, new SimpleEdge(1, this.a, this.f));
         this.graph.addEdge(this.f, new SimpleEdge(100, this.f, this.e));
+    }
+
+    /**
+     * Checks whether the bfs algorithm executes as expected for complex graphs(using Transport and City classes).
+     */
+    @Test
+    public void testGraph(){
+        this.makeComplexGraph();
+        List<Transport> path = this.bfs2.getPath(this.travelGraph, this.washington, this.boston);
+        assertEquals(path.size(), 2);
     }
 
     /**
