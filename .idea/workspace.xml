@@ -2,11 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1fe7cc4a-eb8d-4716-b8ca-bdbdd2a4b485" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/data/cities3.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/cities4.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/transport4.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/transport4.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/DijkstraTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/DijkstraTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/transport3.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/transport3.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/travel-planner-MidianY-lyndaumuhoza/data/transport3.csv" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/travel-planner-MidianY-lyndaumuhoza/data/transport3.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/travel-planner-MidianY-lyndaumuhoza/test/BFSTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/travel-planner-MidianY-lyndaumuhoza/test/BFSTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/BFSTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/BFSTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,8 +30,8 @@
     <property name="project.structure.proportion" value="0.11764705" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
-  <component name="RunManager" selected="JUnit.DijkstraTest.testDijkstra">
-    <configuration name="BFSTest.testBFSMostDirectRoute" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.BFSTest.testBFSNoPath">
+    <configuration name="BFSTest.testBFSMostDirectRoute1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="travel-planner-MidianY-lyndaumuhoza" />
       <extension name="coverage">
         <pattern>
@@ -41,7 +41,39 @@
       </extension>
       <option name="PACKAGE_NAME" value="test" />
       <option name="MAIN_CLASS_NAME" value="test.BFSTest" />
-      <option name="METHOD_NAME" value="testBFSMostDirectRoute" />
+      <option name="METHOD_NAME" value="testBFSMostDirectRoute1" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BFSTest.testBFSMostDirectRoute2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="travel-planner-MidianY-lyndaumuhoza" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="test" />
+      <option name="MAIN_CLASS_NAME" value="test.BFSTest" />
+      <option name="METHOD_NAME" value="testBFSMostDirectRoute2" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BFSTest.testBFSNoPath" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="travel-planner-MidianY-lyndaumuhoza" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="test" />
+      <option name="MAIN_CLASS_NAME" value="test.BFSTest" />
+      <option name="METHOD_NAME" value="testBFSNoPath" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -63,7 +95,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BFSTest.testBasicBFS2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="BFSTest.testGraph" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="travel-planner-MidianY-lyndaumuhoza" />
       <extension name="coverage">
         <pattern>
@@ -73,39 +105,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="test" />
       <option name="MAIN_CLASS_NAME" value="test.BFSTest" />
-      <option name="METHOD_NAME" value="testBasicBFS2" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="DijkstraTest.testDijkstra" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="travel-planner-MidianY-lyndaumuhoza" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="test" />
-      <option name="MAIN_CLASS_NAME" value="test.DijkstraTest" />
-      <option name="METHOD_NAME" value="testDijkstra" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="DijkstraTest.testSimple" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="travel-planner-MidianY-lyndaumuhoza" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="test" />
-      <option name="MAIN_CLASS_NAME" value="test.DijkstraTest" />
-      <option name="METHOD_NAME" value="testSimple" />
+      <option name="METHOD_NAME" value="testGraph" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -113,11 +113,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.DijkstraTest.testDijkstra" />
-        <item itemvalue="JUnit.BFSTest.testBFSMostDirectRoute" />
-        <item itemvalue="JUnit.BFSTest.testBasicBFS2" />
+        <item itemvalue="JUnit.BFSTest.testBFSNoPath" />
         <item itemvalue="JUnit.BFSTest.testBFSSameVertex" />
-        <item itemvalue="JUnit.DijkstraTest.testSimple" />
+        <item itemvalue="JUnit.BFSTest.testGraph" />
+        <item itemvalue="JUnit.BFSTest.testBFSMostDirectRoute2" />
+        <item itemvalue="JUnit.BFSTest.testBFSMostDirectRoute1" />
       </list>
     </recent_temporary>
   </component>
@@ -135,6 +135,7 @@
       <workItem from="1647567586441" duration="528000" />
       <workItem from="1647710273135" duration="10339000" />
       <workItem from="1647814645459" duration="4579000" />
+      <workItem from="1647879150111" duration="5346000" />
     </task>
     <servers />
   </component>

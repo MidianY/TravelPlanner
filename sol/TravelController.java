@@ -1,32 +1,36 @@
 package sol;
 
-import com.sun.source.tree.ReturnTree;
 import src.*;
-import test.simple.SimpleEdge;
-
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.function.Function;
 
-public class
-TravelController implements ITravelController<City, Transport> {
+/**
+ * TravelController class, it is where all the algorithms are controlled, and assigned to which
+ * edgeWeight(cheapest route, most direct route and fastest route) is suitable each algorithm.
+ */
+public class TravelController implements ITravelController<City, Transport> {
     private Dijkstra dijkstra;
     private BFS bfs;
-
-    // Why is this field of type TravelGraph and not IGraph?
-    // Are there any advantages to declaring a field as a specific type rather than the interface?
-    // If this were of type IGraph, could you access methods in TravelGraph not declared in IGraph?
-    // Hint: perhaps you need to define a method!
     private TravelGraph graph;
 
+    /**
+     * This is the constructor of the travelController class, a new Dijkstra, bfs, and graph are instantiated
+     * to be accessible through the entire class
+     */
     public TravelController() {
         this.dijkstra = new Dijkstra();
         this.bfs = new BFS();
         this.graph = new TravelGraph();
     }
 
+    /**
+     *  Loads CSVs into the app.
+     * @param citiesFile    the filename of the cities csv
+     * @param transportFile the filename of the transportations csv
+     * @return
+     */
     @Override
     public String load(String citiesFile, String transportFile) {
         this.graph = new TravelGraph();
@@ -61,6 +65,12 @@ TravelController implements ITravelController<City, Transport> {
         return "Successfully loaded cities and transportation files.";
     }
 
+    /**
+     *  Finds the fastest route in between two cities using Dijkstra algorithm
+     * @param source      the name of the source city
+     * @param destination the name of the destination city
+     * @return
+     */
     @Override
     public List<Transport> fastestRoute(String source, String destination) {
         Function<Transport, Double> priceCalculation = e -> e.getMinutes();
@@ -68,6 +78,12 @@ TravelController implements ITravelController<City, Transport> {
                 this.graph.getCityName(destination), priceCalculation);
     }
 
+    /**
+     * Finds the cheapest route in between two cities using Dijkstra algorithm
+     * @param source      the name of the source city
+     * @param destination the name of the destination city
+     * @return
+     */
     @Override
     public List<Transport> cheapestRoute(String source, String destination) {
         Function<Transport, Double> priceCalculation = e -> e.getPrice();
@@ -76,6 +92,12 @@ TravelController implements ITravelController<City, Transport> {
                 this.graph.getCityName(destination), priceCalculation);
     }
 
+    /**
+     * Finds the most direct route in between two cities using BFS algorithm
+     * @param source      the name of the source city
+     * @param destination the name of the destination city
+     * @return
+     */
     @Override
     public List<Transport> mostDirectRoute(String source, String destination) {
 

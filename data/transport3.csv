@@ -5,3 +5,4 @@ NewYork,Boston,bus,1,2
 Boston,Providence,train,6,1
 Providence,NewYork,bus,2,1
 NewYork,Chicago,train,5,3
+Chicago,NewYork,train,5,3
