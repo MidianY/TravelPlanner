@@ -75,6 +75,11 @@ public class GraphTest {
         this.graph.addEdge(this.a, this.edgeAC);
     }
 
+    /**
+     * This method shows that both methods addVertex and addEdge are working properly as the cities and transport methods
+     * are being added to the travel graph and all calls testing for the other methods in the travelGraph class
+     * exploit this tree
+     */
     public void makeComplexGraph(){
         this.boston = new City("Boston");
         this.providence = new City("Providence");
@@ -102,6 +107,10 @@ public class GraphTest {
                 TransportType.TRAIN, 5.0, 3.0));
     }
 
+    /**
+     * This method checks that the getVertices method is working correctly for the simple
+     * graph created
+     */
     @Test
     public void testGetVertices() {
         this.createSimpleGraph();
@@ -155,5 +164,6 @@ public class GraphTest {
         assertTrue(this.travelGraph.getVertices().contains(this.providence));
         assertTrue(this.travelGraph.getVertices().contains(this.chicago));
     }
+
 
 }
