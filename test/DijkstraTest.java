@@ -4,6 +4,7 @@ import org.junit.Test;
 import sol.Dijkstra;
 import sol.TravelController;
 import src.IDijkstra;
+import src.Transport;
 import test.simple.SimpleEdge;
 import test.simple.SimpleGraph;
 import test.simple.SimpleVertex;
@@ -27,7 +28,6 @@ import static org.junit.Assert.assertTrue;
 public class DijkstraTest {
 
     private static final double DELTA = 0.001;
-
     private SimpleGraph graph;
     private SimpleVertex a;
     private SimpleVertex b;
@@ -45,7 +45,7 @@ public class DijkstraTest {
      * TODO: create more setup methods!
      */
 
-    private void setup() {
+    private void setup(){
         this.travelController = new TravelController();
         this.travelController.load("data/cities4.csv", "data/transport4.csv");
     }
