@@ -220,15 +220,4 @@ public class BFSTest {
         assertEquals(0, this.bfs2.getPath(this.travelGraph, this.boston, this.providence).size());
     }
 
-//    /**
-//     * Checks whether the bfs getPath algorithm returns an empty list when trying to get a path between
-//     * a city and itself.
-//     */
-//    @Test
-//    public void testBFSSameVertex(){
-//        this.makeComplexGraph();
-//        List<Transport> path = new ArrayList<>();
-//        assertEquals(path, this.bfs2.getPath(this.travelGraph, this.boston, this.boston));
-//        assertEquals(0,this.bfs2.getPath(this.travelGraph, this.boston, this.boston).size());
-//    }
 }
