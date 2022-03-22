@@ -17,14 +17,7 @@ import java.util.function.Function;
 import static org.junit.Assert.assertEquals;
 
 /**
- * Your Dijkstra's tests should all go in this class!
- * The test we've given you will pass if you've implemented Dijkstra's correctly, but we still
- * expect you to write more tests using the City and Transport classes.
- * You are welcome to write more tests using the Simple classes, but you will not be graded on
- * those.
- *
- * TODO: Recreate the test below for the City and Transport classes
- * TODO: Expand on your tests, accounting for basic cases and edge cases
+ * Class that represents tests for the accuracy of the Dijkstra algorithm
  */
 public class DijkstraTest {
 

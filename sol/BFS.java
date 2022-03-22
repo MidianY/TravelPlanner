@@ -70,5 +70,4 @@ public class BFS<V, E> implements IBFS<V, E> {
         return false;
     }
 
-
 }

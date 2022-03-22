@@ -14,14 +14,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 /**
- * Your Graph method tests should all go in this class!
- * The test we've given you will pass, but we still expect you to write more tests using the
- * City and Transport classes.
- * You are welcome to write more tests using the Simple classes, but you will not be graded on
- * those.
- *
- * TODO: Recreate the test below for the City and Transport classes
- * TODO: Expand on your tests, accounting for basic cases and edge cases
+ * This class represents the tests for the TravelGraph class
  */
 public class GraphTest {
     private SimpleGraph graph;
@@ -170,12 +163,18 @@ public class GraphTest {
         assertTrue(this.travelGraph.getVertices().contains(this.chicago));
     }
 
+    /**
+     * Checks whether the getEdgeTarget works as expected for a simple graph
+     */
     @Test
     public void testGetEdgeTargetSimple(){
         this.createSimpleGraph();
         assertEquals(this.graph.getEdgeTarget(this.edgeAB), this.b);
     }
 
+    /**
+     * Checks whether the getEdgeTarget works as expected for the complex graph
+     */
     @Test
     public void testGetEdgeTargetComplex(){
         assertEquals(this.travelGraph.getEdgeTarget(new Transport(this.washington, this.newYork,
