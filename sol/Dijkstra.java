@@ -53,6 +53,8 @@ public class Dijkstra<V, E> implements IDijkstra<V, E> {
 
     /**
      *
+     * This is a helper method for getShortestPath. It is a boolean that checks whether there is a path between two cities.
+     * If there is a path, it returns true and false otherwise.
      * @param graph
      * @param source
      * @param edgeWeight

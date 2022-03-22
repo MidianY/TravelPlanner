@@ -86,7 +86,6 @@ public class GraphTest {
         this.newYork = new City("newYork");
         this.washington = new City("Washington");
         this.chicago = new City("Chicago");
-
         this.travelGraph.addVertex(this.boston);
         this.travelGraph.addVertex(this.washington);
         this.travelGraph.addVertex(this.providence);

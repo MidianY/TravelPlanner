@@ -26,7 +26,7 @@ public class TravelController implements ITravelController<City, Transport> {
     }
 
     /**
-     *  Loads CSVs into the app.
+     *  Loads CSVs and turns them into strings so that components of data can be accessed by the user.
      * @param citiesFile    the filename of the cities csv
      * @param transportFile the filename of the transportations csv
      * @return

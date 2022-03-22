@@ -39,7 +39,7 @@
     <property name="project.structure.proportion" value="0.11764705" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
-  <component name="RunManager" selected="JUnit.BFSTest.testBidirectionalEdges">
+  <component name="RunManager" selected="JUnit.GraphTest.testGetEdgeTargetComplex">
     <configuration name="BFSTest.testBasicBFS" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="travel-planner-MidianY-lyndaumuhoza" />
       <extension name="coverage">
@@ -122,11 +122,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.GraphTest.testGetEdgeTargetComplex" />
         <item itemvalue="JUnit.BFSTest.testBidirectionalEdges" />
         <item itemvalue="JUnit.BFSTest.testSameCity" />
         <item itemvalue="JUnit.BFSTest.testDoubleEdges" />
         <item itemvalue="JUnit.BFSTest.testBasicBFS" />
-        <item itemvalue="JUnit.GraphTest.testGetEdgeTargetComplex" />
       </list>
     </recent_temporary>
   </component>
