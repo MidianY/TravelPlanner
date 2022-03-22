@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="1fe7cc4a-eb8d-4716-b8ca-bdbdd2a4b485" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/DijkstraTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/DijkstraTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,8 +35,8 @@
     <property name="project.structure.proportion" value="0.11764705" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
-  <component name="RunManager" selected="JUnit.GraphTest">
-    <configuration name="DijkstraTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.DijkstraTest.testException">
+    <configuration name="DijkstraTest.testException" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="travel-planner-MidianY-lyndaumuhoza" />
       <extension name="coverage">
         <pattern>
@@ -45,7 +46,8 @@
       </extension>
       <option name="PACKAGE_NAME" value="test" />
       <option name="MAIN_CLASS_NAME" value="test.DijkstraTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="METHOD_NAME" value="testException" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -115,11 +117,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.DijkstraTest.testException" />
         <item itemvalue="JUnit.GraphTest" />
         <item itemvalue="JUnit.GraphTest.testGetVerticesComplex" />
         <item itemvalue="JUnit.GraphTest.testGetNames" />
         <item itemvalue="JUnit.GraphTest.testGetOutgoingEdges" />
-        <item itemvalue="JUnit.DijkstraTest" />
       </list>
     </recent_temporary>
   </component>

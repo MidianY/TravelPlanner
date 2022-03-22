@@ -44,6 +44,7 @@ public class DijkstraTest {
     private City kentucky;
     private City durham;
     private City atlanta;
+    private City texas;
     private TravelGraph travelGraph;
     private Dijkstra<City, Transport> dijkstra;
     private TravelController travelController;
@@ -110,6 +111,7 @@ public class DijkstraTest {
         this.kentucky = new City("Kentucky");
         this.durham = new City("Durham");
         this.atlanta = new City("Atlanta");
+        this.texas = new City("Texas");
 
         this.travelGraph.addVertex(this.boston);
         this.travelGraph.addVertex(this.washington);
@@ -119,6 +121,7 @@ public class DijkstraTest {
         this.travelGraph.addVertex(this.kentucky);
         this.travelGraph.addVertex(this.durham);
         this.travelGraph.addVertex(this.atlanta);
+        this.travelGraph.addVertex(this.texas);
 
         this.travelGraph.addEdge(this.providence, new Transport(this.providence, this.washington,
                 TransportType.BUS, 5.0, 8.0));
@@ -227,7 +230,9 @@ public class DijkstraTest {
 
 
     /**
-     * Ensures the algorithm returns an empty list when two cities have no path for the complex graph
+     * Ensures the algorithm returns an empty list when two cities have no path for the complex graph.
+     * Looking at the graph we created there is only a path from atlanta to washington, not the other way around
+     * therefore it should return an empty path of size 0
      */
     @Test
     public void testDijkstraNoPath(){
@@ -236,6 +241,14 @@ public class DijkstraTest {
         Function<Transport, Double> edgeWeightCalculation = e -> e.getMinutes();
         assertEquals(noPath, this.dijkstra.getShortestPath(this.travelGraph, this.washington, this.atlanta, edgeWeightCalculation));
         assertEquals(0, this.dijkstra.getShortestPath(this.travelGraph, this.washington, this.atlanta, edgeWeightCalculation).size());
+    }
+
+    //fix this... test should create an error because there is no transportation method from texas to any other vertex
+    @Test
+    public void testException(){
+        this.complexGraph();
+        Function<Transport, Double> edgeWeightCalculation = e -> e.getMinutes();
+        assertEquals(0, this.dijkstra.getShortestPath(this.travelGraph, this.texas, this.providence, edgeWeightCalculation).size());
     }
 
 }
