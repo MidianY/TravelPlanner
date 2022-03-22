@@ -3,7 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="1fe7cc4a-eb8d-4716-b8ca-bdbdd2a4b485" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/DijkstraTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/DijkstraTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/travel-planner-MidianY-lyndaumuhoza/test/BFSTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/travel-planner-MidianY-lyndaumuhoza/test/BFSTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/travel-planner-MidianY-lyndaumuhoza/test/DijkstraTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/travel-planner-MidianY-lyndaumuhoza/test/DijkstraTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/travel-planner-MidianY-lyndaumuhoza/test/GraphTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/travel-planner-MidianY-lyndaumuhoza/test/GraphTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/BFSTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/BFSTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/GraphTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/GraphTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,8 +39,8 @@
     <property name="project.structure.proportion" value="0.11764705" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
-  <component name="RunManager" selected="JUnit.DijkstraTest.testException">
-    <configuration name="DijkstraTest.testException" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.BFSTest.testBidirectionalEdges">
+    <configuration name="BFSTest.testBasicBFS" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="travel-planner-MidianY-lyndaumuhoza" />
       <extension name="coverage">
         <pattern>
@@ -45,14 +49,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="test" />
-      <option name="MAIN_CLASS_NAME" value="test.DijkstraTest" />
-      <option name="METHOD_NAME" value="testException" />
+      <option name="MAIN_CLASS_NAME" value="test.BFSTest" />
+      <option name="METHOD_NAME" value="testBasicBFS" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GraphTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="BFSTest.testBidirectionalEdges" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="travel-planner-MidianY-lyndaumuhoza" />
       <extension name="coverage">
         <pattern>
@@ -61,29 +65,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="test" />
-      <option name="MAIN_CLASS_NAME" value="test.GraphTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="GraphTest.testGetNames" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="travel-planner-MidianY-lyndaumuhoza" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="test" />
-      <option name="MAIN_CLASS_NAME" value="test.GraphTest" />
-      <option name="METHOD_NAME" value="testGetNames" />
+      <option name="MAIN_CLASS_NAME" value="test.BFSTest" />
+      <option name="METHOD_NAME" value="testBidirectionalEdges" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GraphTest.testGetOutgoingEdges" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="BFSTest.testDoubleEdges" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="travel-planner-MidianY-lyndaumuhoza" />
       <extension name="coverage">
         <pattern>
@@ -92,14 +81,30 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="test" />
-      <option name="MAIN_CLASS_NAME" value="test.GraphTest" />
-      <option name="METHOD_NAME" value="testGetOutgoingEdges" />
+      <option name="MAIN_CLASS_NAME" value="test.BFSTest" />
+      <option name="METHOD_NAME" value="testDoubleEdges" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GraphTest.testGetVerticesComplex" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="BFSTest.testSameCity" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="travel-planner-MidianY-lyndaumuhoza" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="test" />
+      <option name="MAIN_CLASS_NAME" value="test.BFSTest" />
+      <option name="METHOD_NAME" value="testSameCity" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GraphTest.testGetEdgeTargetComplex" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="travel-planner-MidianY-lyndaumuhoza" />
       <extension name="coverage">
         <pattern>
@@ -109,7 +114,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="test" />
       <option name="MAIN_CLASS_NAME" value="test.GraphTest" />
-      <option name="METHOD_NAME" value="testGetVerticesComplex" />
+      <option name="METHOD_NAME" value="testGetEdgeTargetComplex" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -117,11 +122,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.DijkstraTest.testException" />
-        <item itemvalue="JUnit.GraphTest" />
-        <item itemvalue="JUnit.GraphTest.testGetVerticesComplex" />
-        <item itemvalue="JUnit.GraphTest.testGetNames" />
-        <item itemvalue="JUnit.GraphTest.testGetOutgoingEdges" />
+        <item itemvalue="JUnit.BFSTest.testBidirectionalEdges" />
+        <item itemvalue="JUnit.BFSTest.testSameCity" />
+        <item itemvalue="JUnit.BFSTest.testDoubleEdges" />
+        <item itemvalue="JUnit.BFSTest.testBasicBFS" />
+        <item itemvalue="JUnit.GraphTest.testGetEdgeTargetComplex" />
       </list>
     </recent_temporary>
   </component>
@@ -158,11 +163,22 @@
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/sol/BFS.java</url>
+          <line>34</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/BFS_java$GraphTest.ic" NAME="GraphTest Coverage Results" MODIFIED="1647568684415" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/BFS_java$DijkstraTest.ic" NAME="DijkstraTest Coverage Results" MODIFIED="1647568605043" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>test.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/BFS_java$DijkstraTest.ic" NAME="DijkstraTest Coverage Results" MODIFIED="1647568605043" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/BFS_java$GraphTest.ic" NAME="GraphTest Coverage Results" MODIFIED="1647568684415" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>test.*</FILTER>
     </SUITE>
   </component>

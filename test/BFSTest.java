@@ -123,6 +123,8 @@ public class BFSTest {
                 TransportType.TRAIN, 3.0, 1.0));
         this.travelGraph.addEdge(this.newYork, new Transport(this.newYork, this.boston,
                 TransportType.BUS, 1.0, 2.0));
+        this.travelGraph.addEdge(this.boston, new Transport(this.boston, this.newYork,
+                TransportType.BUS, 1.0, 2.0));
         this.travelGraph.addEdge(this.providence, new Transport(this.boston, this.providence,
                 TransportType.TRAIN, 6.0, 1.0));
         this.travelGraph.addEdge(this.providence, new Transport(this.providence, this.newYork,
@@ -220,4 +222,24 @@ public class BFSTest {
         assertEquals(0, this.bfs2.getPath(this.travelGraph, this.boston, this.providence).size());
     }
 
+    /**
+     * Checks whether bfs gets a path from a city to itself.
+     */
+    @Test
+    public void testSameCity() {
+        this.makeComplexGraph();
+        List<Transport> path = new ArrayList<>();
+        assertEquals(path, this.bfs2.getPath(this.travelGraph, this.chicago, this.chicago));
+        assertEquals(0, this.bfs2.getPath(this.travelGraph, this.chicago, this.chicago).size());
+    }
+
+    /**
+     * Checks whether bfs gets paths from bidirectional edges
+     */
+    @Test
+    public void testBidirectionalEdges(){
+        this.makeComplexGraph();
+        assertEquals(this.bfs2.getPath(this.travelGraph, this.newYork, this.boston).size(),
+                this.bfs2.getPath(this.travelGraph, this.boston, this.newYork).size());
+    }
 }

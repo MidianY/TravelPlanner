@@ -122,9 +122,15 @@ public class GraphTest {
     }
 
     @Test
-    public void testGetEdgeSource() {
+    public void testGetEdgeSourceSimple() {
         this.createSimpleGraph();
         assertEquals(this.graph.getEdgeSource(this.edgeAB), this.a);
+    }
+
+    @Test
+    public void getEdgeSourceComplex(){
+        assertEquals(this.travelGraph.getEdgeSource(new Transport(this.washington, this.newYork,
+                TransportType.BUS, 5.0, 3.0)), this.washington);
     }
 
     /**
@@ -163,6 +169,18 @@ public class GraphTest {
         assertTrue(this.travelGraph.getVertices().contains(this.newYork));
         assertTrue(this.travelGraph.getVertices().contains(this.providence));
         assertTrue(this.travelGraph.getVertices().contains(this.chicago));
+    }
+
+    @Test
+    public void testGetEdgeTargetSimple(){
+        this.createSimpleGraph();
+        assertEquals(this.graph.getEdgeTarget(this.edgeAB), this.b);
+    }
+
+    @Test
+    public void testGetEdgeTargetComplex(){
+        assertEquals(this.travelGraph.getEdgeTarget(new Transport(this.washington, this.newYork,
+                TransportType.BUS, 5.0, 3.0)), this.newYork);
     }
 
 
