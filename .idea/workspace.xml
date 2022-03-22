@@ -3,12 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="1fe7cc4a-eb8d-4716-b8ca-bdbdd2a4b485" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/travel-planner-MidianY-lyndaumuhoza/sol/BFS.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/travel-planner-MidianY-lyndaumuhoza/sol/BFS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/travel-planner-MidianY-lyndaumuhoza/sol/Dijkstra.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/travel-planner-MidianY-lyndaumuhoza/sol/Dijkstra.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/travel-planner-MidianY-lyndaumuhoza/sol/TravelController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/travel-planner-MidianY-lyndaumuhoza/sol/TravelController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/travel-planner-MidianY-lyndaumuhoza/sol/TravelGraph.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/travel-planner-MidianY-lyndaumuhoza/sol/TravelGraph.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/travel-planner-MidianY-lyndaumuhoza/test/BFSTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/travel-planner-MidianY-lyndaumuhoza/test/BFSTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/travel-planner-MidianY-lyndaumuhoza/test/DijkstraTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/travel-planner-MidianY-lyndaumuhoza/test/DijkstraTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sol/Dijkstra.java" beforeDir="false" afterPath="$PROJECT_DIR$/sol/Dijkstra.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/DijkstraTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/DijkstraTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -41,7 +37,7 @@
     <property name="project.structure.proportion" value="0.11764705" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
-  <component name="RunManager" selected="JUnit.DijkstraTest">
+  <component name="RunManager" selected="JUnit.DijkstraTest.testDijkstraNoPath">
     <configuration name="DijkstraTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="travel-planner-MidianY-lyndaumuhoza" />
       <extension name="coverage">
@@ -57,7 +53,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DijkstraTest.testDijkstra" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DijkstraTest.test2DijkstraCheapest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="travel-planner-MidianY-lyndaumuhoza" />
       <extension name="coverage">
         <pattern>
@@ -67,7 +63,23 @@
       </extension>
       <option name="PACKAGE_NAME" value="test" />
       <option name="MAIN_CLASS_NAME" value="test.DijkstraTest" />
-      <option name="METHOD_NAME" value="testDijkstra" />
+      <option name="METHOD_NAME" value="test2DijkstraCheapest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DijkstraTest.test2DijkstraFastest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="travel-planner-MidianY-lyndaumuhoza" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="test" />
+      <option name="MAIN_CLASS_NAME" value="test.DijkstraTest" />
+      <option name="METHOD_NAME" value="test2DijkstraFastest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -84,22 +96,6 @@
       <option name="PACKAGE_NAME" value="test" />
       <option name="MAIN_CLASS_NAME" value="test.DijkstraTest" />
       <option name="METHOD_NAME" value="testDijkstraCheapestPath" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="DijkstraTest.testDijkstraFastestPath" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="travel-planner-MidianY-lyndaumuhoza" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="test" />
-      <option name="MAIN_CLASS_NAME" value="test.DijkstraTest" />
-      <option name="METHOD_NAME" value="testDijkstraFastestPath" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -123,11 +119,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.DijkstraTest" />
-        <item itemvalue="JUnit.DijkstraTest.testDijkstraFastestPath" />
-        <item itemvalue="JUnit.DijkstraTest.testDijkstra" />
-        <item itemvalue="JUnit.DijkstraTest.testDijkstraCheapestPath" />
         <item itemvalue="JUnit.DijkstraTest.testDijkstraNoPath" />
+        <item itemvalue="JUnit.DijkstraTest" />
+        <item itemvalue="JUnit.DijkstraTest.test2DijkstraFastest" />
+        <item itemvalue="JUnit.DijkstraTest.test2DijkstraCheapest" />
+        <item itemvalue="JUnit.DijkstraTest.testDijkstraCheapestPath" />
       </list>
     </recent_temporary>
   </component>

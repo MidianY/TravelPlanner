@@ -46,6 +46,7 @@ public class DijkstraTest {
     private City chicago;
     private City kentucky;
     private City durham;
+    private City atlanta;
     private TravelGraph travelGraph;
     private Dijkstra<City, Transport> dijkstra;
     private TravelController travelController;
@@ -111,12 +112,16 @@ public class DijkstraTest {
         this.washington = new City("Washington");
         this.kentucky = new City("Kentucky");
         this.durham = new City("Durham");
+        this.atlanta = new City("Atlanta");
 
         this.travelGraph.addVertex(this.boston);
         this.travelGraph.addVertex(this.washington);
         this.travelGraph.addVertex(this.providence);
         this.travelGraph.addVertex(this.newYork);
         this.travelGraph.addVertex(this.chicago);
+        this.travelGraph.addVertex(this.kentucky);
+        this.travelGraph.addVertex(this.durham);
+        this.travelGraph.addVertex(this.atlanta);
 
         this.travelGraph.addEdge(this.providence, new Transport(this.providence, this.washington,
                 TransportType.BUS, 5.0, 8.0));
@@ -126,6 +131,7 @@ public class DijkstraTest {
                 TransportType.BUS, 6.0, 1.0));
         this.travelGraph.addEdge(this.chicago, new Transport(this.chicago, this.boston,
                 TransportType.BUS, 40.0, 10.0));
+
         this.travelGraph.addEdge(this.chicago, new Transport(this.chicago, this.newYork,
                 TransportType.BUS, 20.0, 6.0));
         this.travelGraph.addEdge(this.newYork, new Transport(this.newYork, this.boston,
@@ -136,6 +142,11 @@ public class DijkstraTest {
                 TransportType.BUS, 30.0, 1.0));
         this.travelGraph.addEdge(this.durham, new Transport(this.durham, this.providence,
                 TransportType.BUS, 15.0, 5.0));
+        this.travelGraph.addEdge(this.boston, new Transport(this.boston, this.kentucky,
+                TransportType.BUS, 30.0, 1.0));
+        this.travelGraph.addEdge(this.atlanta, new Transport(this.atlanta, this.washington,
+                TransportType.BUS, 30.0, 1.0));
+
 
     }
 
@@ -198,6 +209,31 @@ public class DijkstraTest {
     }
 
     /**
+     * This path is slightly more complex than the earlier test, it involves traversing through many more cities
+     * if the desired route is based on the cheapest price
+     */
+    @Test
+    public void test2DijkstraCheapest(){
+        //Providence -> Chicago -> Boston -> Kentucky -> Durham
+        this.complexGraph();
+        Function<Transport, Double> edgeWeightCalculation = e -> e.getMinutes();
+        assertEquals(4, this.dijkstra.getShortestPath(this.travelGraph, this.providence, this.durham, edgeWeightCalculation).size());
+    }
+
+    /**
+     * The fastest path for this graph involves making the stops Providence -> Washington -> NewYork -> Boston -> Kentucky -> Durham
+     * The overall edgeweights associated with price is 101. The only other path from Providence to Durham has a total edgeweight
+     * of 110 and only has 4 stops thus this test accurately utilized dijkstra's algorithm.
+     */
+    @Test
+    public void test2DijkstraFastest(){
+        this.complexGraph();
+        Function<Transport, Double> edgeWeightCalculation = e -> e.getPrice();
+        assertEquals(5, this.dijkstra.getShortestPath(this.travelGraph, this.providence, this.durham, edgeWeightCalculation).size());
+    }
+
+
+    /**
      * Ensures the algorithm returns an empty list when two cities have no path for the complex graph
      */
     @Test
@@ -205,8 +241,8 @@ public class DijkstraTest {
         this.complexGraph();
         List<Transport> noPath = new ArrayList<>();
         Function<Transport, Double> edgeWeightCalculation = e -> e.getMinutes();
-        assertEquals(noPath, this.dijkstra.getShortestPath(this.travelGraph, this.boston, this.providence, edgeWeightCalculation));
-        assertEquals(0, this.dijkstra.getShortestPath(this.travelGraph, this.boston, this.providence, edgeWeightCalculation).size());
+        assertEquals(noPath, this.dijkstra.getShortestPath(this.travelGraph, this.washington, this.atlanta, edgeWeightCalculation));
+        assertEquals(0, this.dijkstra.getShortestPath(this.travelGraph, this.washington, this.atlanta, edgeWeightCalculation).size());
     }
 
 }
