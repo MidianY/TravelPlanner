@@ -11,13 +11,10 @@ import src.TransportType;
 import test.simple.SimpleEdge;
 import test.simple.SimpleGraph;
 import test.simple.SimpleVertex;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Function;
-
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
 
 /**
  * Your Dijkstra's tests should all go in this class!
@@ -131,7 +128,6 @@ public class DijkstraTest {
                 TransportType.BUS, 6.0, 1.0));
         this.travelGraph.addEdge(this.chicago, new Transport(this.chicago, this.boston,
                 TransportType.BUS, 40.0, 10.0));
-
         this.travelGraph.addEdge(this.chicago, new Transport(this.chicago, this.newYork,
                 TransportType.BUS, 20.0, 6.0));
         this.travelGraph.addEdge(this.newYork, new Transport(this.newYork, this.boston,
@@ -146,8 +142,6 @@ public class DijkstraTest {
                 TransportType.BUS, 30.0, 1.0));
         this.travelGraph.addEdge(this.atlanta, new Transport(this.atlanta, this.washington,
                 TransportType.BUS, 30.0, 1.0));
-
-
     }
 
 
@@ -193,7 +187,6 @@ public class DijkstraTest {
         this.complexGraph();
         Function<Transport, Double> edgeWeightCalculation = e -> e.getPrice();
         assertEquals(3, this.dijkstra.getShortestPath(this.travelGraph, this.providence, this.boston, edgeWeightCalculation).size());
-
     }
 
     /**
@@ -210,11 +203,11 @@ public class DijkstraTest {
 
     /**
      * This path is slightly more complex than the earlier test, it involves traversing through many more cities
-     * if the desired route is based on the cheapest price
+     * if the desired route is based on the cheapest price. The path that it should take is by stopping at the cities
+     *  Providence -> Chicago -> Boston -> Kentucky -> Durham
      */
     @Test
     public void test2DijkstraCheapest(){
-        //Providence -> Chicago -> Boston -> Kentucky -> Durham
         this.complexGraph();
         Function<Transport, Double> edgeWeightCalculation = e -> e.getMinutes();
         assertEquals(4, this.dijkstra.getShortestPath(this.travelGraph, this.providence, this.durham, edgeWeightCalculation).size());
