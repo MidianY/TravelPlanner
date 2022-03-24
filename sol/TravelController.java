@@ -73,9 +73,14 @@ public class TravelController implements ITravelController<City, Transport> {
      */
     @Override
     public List<Transport> fastestRoute(String source, String destination) {
-        Function<Transport, Double> priceCalculation = e -> e.getMinutes();
-        return this.dijkstra.getShortestPath(this.graph,this.graph.getCityName(source),
-                this.graph.getCityName(destination), priceCalculation);
+        if(this.graph.getCityName(source) == null || this.graph.getCityName(destination) == null){
+            throw new IllegalArgumentException("City does not exist");
+        }
+        else{
+            Function<Transport, Double> priceCalculation = e -> e.getMinutes();
+            return this.dijkstra.getShortestPath(this.graph,this.graph.getCityName(source),
+                    this.graph.getCityName(destination), priceCalculation);
+        }
     }
 
     /**
@@ -86,10 +91,15 @@ public class TravelController implements ITravelController<City, Transport> {
      */
     @Override
     public List<Transport> cheapestRoute(String source, String destination) {
-        Function<Transport, Double> priceCalculation = e -> e.getPrice();
+        if(this.graph.getCityName(source) == null || this.graph.getCityName(destination) == null){
+            throw new IllegalArgumentException("City does not exist");
+        }
+        else{
+            Function<Transport, Double> priceCalculation = e -> e.getPrice();
 
-        return   this.dijkstra.getShortestPath(this.graph,this.graph.getCityName(source),
-                this.graph.getCityName(destination), priceCalculation);
+            return   this.dijkstra.getShortestPath(this.graph,this.graph.getCityName(source),
+                    this.graph.getCityName(destination), priceCalculation);
+        }
     }
 
     /**
@@ -101,6 +111,11 @@ public class TravelController implements ITravelController<City, Transport> {
     @Override
     public List<Transport> mostDirectRoute(String source, String destination) {
 
-        return this.bfs.getPath(this.graph, this.graph.getCityName(source), this.graph.getCityName(destination));
+        if(this.graph.getCityName(source) == null || this.graph.getCityName(destination) == null){
+            throw new IllegalArgumentException("City does not exist");
+        }
+        else{
+            return this.bfs.getPath(this.graph, this.graph.getCityName(source), this.graph.getCityName(destination));
+        }
     }
 }

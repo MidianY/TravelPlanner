@@ -36,18 +36,22 @@ public class Dijkstra<V, E> implements IDijkstra<V, E> {
     @Override
     public List<E> getShortestPath(IGraph<V, E> graph, V source, V destination,
                                    Function<E, Double> edgeWeight) {
-
-        this.checkPath(graph, source, edgeWeight);
         List<E> shortestPath = new ArrayList<>();
-        V current = destination;
-        E currentEdge = this.path.get(current);
-        while(currentEdge != null){
-            shortestPath.add(0, this.path.get(current));
-            current = graph.getEdgeSource(this.path.get(current));
-            currentEdge = this.path.get(current);
-        }
+       try {
+           this.checkPath(graph, source, edgeWeight);
+           V current = destination;
+           E currentEdge = this.path.get(current);
+           while (currentEdge != null) {
+               shortestPath.add(0, this.path.get(current));
+               current = graph.getEdgeSource(this.path.get(current));
+               currentEdge = this.path.get(current);
+           }
 
-        return shortestPath;
+           return shortestPath;
+       }catch(NullPointerException e){
+           return shortestPath;
+       }
+
     }
 
     /**

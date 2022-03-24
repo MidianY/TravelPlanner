@@ -27,16 +27,22 @@ public class BFS<V, E> implements IBFS<V, E> {
     @Override
     public List<E> getPath(IGraph<V, E> graph, V start, V end) {
         List<E> path = new ArrayList<>();
-        if(checkPath(graph, start, end)){
+        try {
+            if (checkPath(graph, start, end)) {
                 path.add(0, this.cityTransport.get(end));
-            V current = graph.getEdgeSource(this.cityTransport.get(end));
-            while(!current.equals(start)){
-                path.add(0, this.cityTransport.get(current));
-                current = graph.getEdgeSource(this.cityTransport.get(current));
+                V current = graph.getEdgeSource(this.cityTransport.get(end));
+                while (!current.equals(start)) {
+                    path.add(0, this.cityTransport.get(current));
+                    current = graph.getEdgeSource(this.cityTransport.get(current));
+                }
             }
+            return path;
+        } catch (NullPointerException e) {
+            return path;
         }
-        return path;
     }
+
+
 
     /**
      * This is a helper method for getPath. It is a boolean that checks whether there is a path between two cities.

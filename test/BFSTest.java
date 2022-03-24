@@ -15,6 +15,7 @@ import java.util.List;
 import sol.TravelController;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertThrows;
 
 /**
  * Class that represents tests for the accuracy of the BFS algorithm
@@ -235,4 +236,26 @@ public class BFSTest {
         assertEquals(this.bfs2.getPath(this.travelGraph, this.newYork, this.boston).size(),
                 this.bfs2.getPath(this.travelGraph, this.boston, this.newYork).size());
     }
+
+    /**
+     * Checks whether checking for a path between two cities in a non-existent graph returns an empty path.
+     */
+    @Test
+    public void testEmptyGraph(){
+    this.travelGraph = new TravelGraph();
+    List<Transport> path = new ArrayList<>();
+    assertEquals(path, this.bfs2.getPath(this.travelGraph, this.newYork, this.boston));
+    }
+
+    /**
+     * Checks whether mostDirectRoute throws an illegal argument exception when we look
+     * up paths from cities that do not exist in the graph
+     */
+    @Test
+    public void testNoCity(){
+    this.makeComplexGraph();
+    assertThrows(IllegalArgumentException.class, () -> this.travelController.mostDirectRoute( "Tokyo", this.newYork.toString()));
+    assertThrows(IllegalArgumentException.class, () -> this.travelController.mostDirectRoute(this.chicago.toString(), "Beijing"));
+    }
+
 }

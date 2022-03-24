@@ -15,6 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Function;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertThrows;
 
 /**
  * Class that represents tests for the accuracy of the Dijkstra algorithm
@@ -236,12 +237,26 @@ public class DijkstraTest {
         assertEquals(0, this.dijkstra.getShortestPath(this.travelGraph, this.washington, this.atlanta, edgeWeightCalculation).size());
     }
 
-    //fix this... test should create an error because there is no transportation method from texas to any other vertex
+    /**
+     * Checks whether checking for a path between two cities in a non-existent graph returns an empty path.
+     */
     @Test
-    public void testException(){
-        this.complexGraph();
+    public void testEmptyGraph(){
+        this.travelGraph = new TravelGraph();
+        List<Transport> path = new ArrayList<>();
         Function<Transport, Double> edgeWeightCalculation = e -> e.getMinutes();
-        assertEquals(0, this.dijkstra.getShortestPath(this.travelGraph, this.texas, this.providence, edgeWeightCalculation).size());
+        assertEquals(path, this.dijkstra.getShortestPath(this.travelGraph, this.newYork, this.boston, edgeWeightCalculation));
+    }
+
+    /**
+     * Checks whether mostDirectRoute throws an illegal argument exception when we look
+     * up paths from cities that do not exist in the graph
+     */
+    @Test
+    public void testNoCity(){
+        this.complexGraph();
+        assertThrows(IllegalArgumentException.class, () -> this.travelController.cheapestRoute( "Tokyo", this.newYork.toString()));
+        assertThrows(IllegalArgumentException.class, () -> this.travelController.fastestRoute(this.chicago.toString(), "Beijing"));
     }
 
 }
